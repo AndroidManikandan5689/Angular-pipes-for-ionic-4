@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <p><b>Lower case pipe</b></p>
+    {{msg | lowercase}}
+    <p><b>Upper case pipe</b></p>
+    {{msg | uppercase}}
+    <p><b>Title case pipe</b></p>
+    {{msg | titlecase}}
+    <p><b>Percentage pipe</b></p>
+    <p>{{per_val | percent}}</p>                    
+    <p>{{per_val | percent:'1.0-1'}}         </p>
+      <p>{{per_val | percent:'4.0-1'}}         </p>
+        <p>{{per_val | percent:'4.3-5'}}     </p>
+          <p>{{ per_val | percent:'4.3-5': 'en'}}</p> 
+
+        
+    <p><b>Slice pipe</b></p>  
+<ul>
+  <li *ngFor="let lst of listArr | slice:2:4">
+      {{lst}}
+    </li>
+  </ul> 
+  <p><b>i18nSelect pipe</b></p>  
+  <div>
+     {{ name | i18nSelect : score}}
+  </div>
+
+  <p><b>JSON pipe</b></p>  
+  <div>
+    Without JSON pipe:<br />
+    <pre>{{object}}</pre>
+    With JSON pipe:<br />
+    <pre>{{object | json}}</pre>
+    </div>
+  
+          
+  <p><b>Async pipe</b></p>  
+          <div>
+            <code>promise|async</code>: 
+            <button (click)="clicked()">{{ arrived ? 'Reset' : 'Resolve' }}</button>
+            <span>Wait for it... {{ greeting | async }}</span>
+          </div>
+  </div>
+</ion-content>
