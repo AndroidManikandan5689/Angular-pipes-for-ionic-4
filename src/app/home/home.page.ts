@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,9 @@ export class HomePage {
 
   object: Object = {name: 'mani', age: '30', location: {no: 10, address: ["new street", "city", "state", "country"]}};
 
-  constructor() { this.reset(); }
+  public today : number 	= Date.now();
+
+  constructor(private router: Router) { this.reset(); }
 
   reset() {
     this.arrived = false;
@@ -35,6 +38,12 @@ export class HomePage {
       this.resolve !('hi there!');
       this.arrived = true;
     }
+  }
+
+  navigateCountry()
+  {
+    this.router.navigate(['country'])
+
   }
 
 }

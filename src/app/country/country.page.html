@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="goBack()"> <ion-button>Back</ion-button></ion-buttons>
+    <ion-title>country</ion-title>
+  </ion-toolbar>
+
+  <ion-list sticky>
+    <ion-searchbar placeholder="Search country" #search ></ion-searchbar>
+  </ion-list>
+</ion-header>
+
+<ion-content>
+<ion-item *ngFor="let country of countryList | filterBy: search.value:filterKey">
+
+  <ion-label>{{country.name}}</ion-label>
+
+</ion-item>
+</ion-content>

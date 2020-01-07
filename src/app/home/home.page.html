@@ -49,4 +49,19 @@
             <span>Wait for it... {{ greeting | async }}</span>
           </div>
   </div>
+
+  <ion-button (click)="navigateCountry()">Filter pipe demo</ion-button>
+
+  
+  <p><b>Date pipe</b></p> 
+  
+  <p>Short format :        {{ today | date: 'short' }}</p>
+  <p>Medium format :       {{ today | date: 'medium' }}</p>
+  <p>Full Date format :    {{ today | date: 'fullDate' }}</p>
+  <p>Long Date format :    {{ today | date: 'longDate' }}</p>
+  <p>Medium Date format :  {{ today | date: 'mediumDate' }}</p>
+  <p>Short Date format :   {{ today | date: 'shortDate' }}</p>
+  <p>Medium Time format :  {{ today | date: 'mediumTime' }}</p>
+  <p>Short Time format :   {{ today | date: 'shortTime' }}</p>
+
 </ion-content>
